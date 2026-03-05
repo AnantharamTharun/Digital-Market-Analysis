@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Farmer Buyer Portal</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Farmer – Buyer Portal</h1>
+
+<div class="container">
+
+<div class="box">
+<h2>Login</h2>
+<form method="POST">
+    <input name="id" placeholder="User ID" required>
+    <input name="password" type="password" placeholder="Password" required>
+
+    <select name="role">
+        <option value="farmer">Farmer</option>
+        <option value="buyer">Buyer</option>
+    </select>
+
+    <input type="hidden" name="action" value="login">
+    <button>Login</button>
+</form>
+</div>
+
+<div class="box">
+<h2>Signup</h2>
+<form method="POST">
+    <input name="id" placeholder="User ID" required>
+    <input name="password" type="password" placeholder="Password" required>
+
+    <select name="role">
+        <option value="farmer">Farmer</option>
+        <option value="buyer">Buyer</option>
+    </select>
+
+    <input type="hidden" name="action" value="signup">
+    <button>Signup</button>
+</form>
+</div>
+
+</div>
+
+</body>
+</html>

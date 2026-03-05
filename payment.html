@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Payment</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+<h2> Secure Payment</h2>
+</div>
+
+<div class="container">
+<div class="card">
+<h3>Payment Details</h3>
+<p>Crop: {{ crop[2] }}</p>
+<p>Amount: ₹ {{ crop[3] }}</p>
+
+<form method="post">
+<input placeholder="Card Number" required>
+<input placeholder="MM/YY" required>
+<input placeholder="CVV" required>
+<button class="primary">Pay</button>
+</form>
+</div>
+</div>
+
+<footer>© 2026 Farmer Buyer Platform</footer>
+</body>
+</html>

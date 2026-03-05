@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+<h2> Admin Dashboard</h2>
+<a href="/logout"><button class="logout">Logout</button></a>
+</div>
+
+<div class="container">
+
+<!-- WELCOME -->
+<div class="welcome admin">
+     Welcome <span>Admin</span>
+</div>
+
+<div class="card">
+<h3>Users</h3>
+<table>
+<tr><th>ID</th><th>Role</th><th>Action</th></tr>
+{% for u in users %}
+<tr>
+<td>{{ u[0] }}</td>
+<td>{{ u[2] }}</td>
+<td>
+{% if u[0] != 'admin' %}
+<a href="/delete_user/{{ u[0] }}"><button class="logout">Delete</button></a>
+{% endif %}
+</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+
+<div class="card">
+<h3>Crops</h3>
+<table>
+<tr><th>Farmer</th><th>Crop</th><th>Price</th><th>Action</th></tr>
+{% for c in crops %}
+<tr>
+<td>{{ c[1] }}</td>
+<td>{{ c[2] }}</td>
+<td>{{ c[3] }}</td>
+<td><a href="/delete_crop/{{ c[0] }}"><button class="logout">Delete</button></a></td>
+</tr>
+{% endfor %}
+</table>
+</div>
+
+</div>
+
+<footer>© 2026 Farmer Buyer Platform</footer>
+</body>
+</html>

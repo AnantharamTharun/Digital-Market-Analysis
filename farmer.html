@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Farmer Dashboard</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <h2> Farmer Dashboard</h2>
+    <a href="/logout"><button class="logout">Logout</button></a>
+</div>
+
+<div class="container">
+
+<!-- WELCOME -->
+<div class="welcome farmer">
+     Welcome <span>Farmer</span>
+</div>
+
+<div class="card">
+<h3>Add Crop</h3>
+<form method="post" enctype="multipart/form-data">
+    <input name="crop" placeholder="Crop Name" required>
+    <input name="price" placeholder="Price" required>
+    <input type="file" name="image" required>
+    <button class="primary">Add Crop</button>
+</form>
+</div>
+
+<div class="card">
+<h3>My Crops</h3>
+<div class="grid">
+{% for c in crops %}
+<div class="card crop-card">
+<img src="/static/uploads/{{ c[4] }}">
+<h4>{{ c[2] }}</h4>
+<p>₹ {{ c[3] }}</p>
+</div>
+{% endfor %}
+</div>
+</div>
+
+</div>
+
+<footer>© 2026 Farmer Buyer Platform</footer>
+</body>
+</html>

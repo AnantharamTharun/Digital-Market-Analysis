@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Farmer Buyer Platform</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>Farmer – Buyer Marketplace</h2>
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h2 style="text-align:center">Login / Signup</h2>
+<p style="color:red;text-align:center">{{ msg }}</p>
+
+<form method="post">
+
+    <input name="id" placeholder="User ID" required>
+
+    <input type="password" id="pwd" name="password" placeholder="Password" required>
+
+    <!-- SHOW PASSWORD -->
+    <div class="show-pass">
+        <input type="checkbox" onclick="togglePassword()">
+        <label>Show Password</label>
+    </div>
+
+    <!-- ROLE DROPDOWN -->
+    <label style="font-weight:bold">Select Role</label>
+    <select name="role" required style="
+        width:100%;
+        padding:12px;
+        border-radius:10px;
+        margin:10px 0;
+        border:none;
+        font-size:15px;
+    ">
+        <option value="">-- Choose Role --</option>
+        <option value="farmer"> Farmer</option>
+        <option value="buyer"> Buyer</option>
+        <option value="admin"> Admin</option>
+    </select>
+
+    <!-- ACTION BUTTONS -->
+    <div style="display:flex; gap:15px; margin-top:15px;">
+        <button class="primary" style="flex:1" name="action" value="login">
+            Login
+        </button>
+        <button class="primary" style="flex:1" name="action" value="signup">
+            Signup
+        </button>
+    </div>
+
+</form>
+
+</div>
+</div>
+
+<footer>
+© 2026 Farmer Buyer Platform • Connecting Farmers & Buyers
+</footer>
+
+<script>
+function togglePassword(){
+    let p = document.getElementById("pwd");
+    p.type = (p.type === "password") ? "text" : "password";
+}
+</script>
+
+</body>
+</html>

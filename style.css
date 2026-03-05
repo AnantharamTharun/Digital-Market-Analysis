@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== BACKGROUND ===== */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url("https://images.unsplash.com/photo-1625246333195-78d9c38ad449");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    animation: fadeIn 0.8s ease;
+}
+
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoom {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: rgba(0,0,0,0.7);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: rgba(255,255,255,0.95);
+    color: #333;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    margin-bottom: 30px;
+    animation: zoom 0.6s ease;
+}
+
+/* ===== INPUTS ===== */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+/* ===== SHOW PASSWORD ===== */
+.show-pass {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* ===== ROLE BUTTONS ===== */
+.role-buttons {
+    display: flex;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.role-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.role-btn.farmer { background: #27ae60; color: #fff; }
+.role-btn.buyer  { background: #2980b9; color: #fff; }
+.role-btn.admin  { background: #8e44ad; color: #fff; }
+
+.role-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* ===== MAIN BUTTONS ===== */
+button {
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button.primary {
+    background: #27ae60;
+    color: #fff;
+}
+
+button.primary:hover {
+    background: #219150;
+    transform: scale(1.05);
+}
+
+.logout {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.logout:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+/* ===== GRID ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+/* ===== CROP CARD ===== */
+.crop-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.crop-card {
+    transition: 0.4s;
+}
+
+.crop-card:hover {
+    transform: translateY(-10px);
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #333;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background: #27ae60;
+    color: #fff;
+}
+
+tr:hover {
+    background: #ecf9f1;
+}
+
+/* ===== SUCCESS ===== */
+.success-icon {
+    font-size: 70px;
+    color: #27ae60;
+    animation: pulse 1.2s infinite;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(0,0,0,0.7);
+    margin-top: 40px;
+}
+/* ===== WELCOME ANIMATION ===== */
+.welcome {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    animation: slideGlow 1s ease forwards;
+}
+
+.welcome span {
+    color: #27ae60;
+}
+
+@keyframes slideGlow {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+        text-shadow: none;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        text-shadow: 0 0 15px rgba(39,174,96,0.8);
+    }
+}
+
+/* Role-specific colors */
+.welcome.farmer span { color: #2ecc71; }
+.welcome.buyer span  { color: #3498db; }
+.welcome.admin span  { color: #9b59b6; }
+

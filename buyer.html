@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Buyer Marketplace</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>🛒 Buyer Marketplace</h2>
+    <a href="/logout"><button class="logout">Logout</button></a>
+</div>
+
+<div class="container">
+
+<!-- WELCOME -->
+<div class="welcome buyer">
+    Welcome <span>Buyer</span>
+</div>
+
+<div class="card">
+<form method="get">
+    <input name="q" placeholder="Search crop">
+    <input name="price" placeholder="Max price">
+    <button class="primary">Search</button>
+</form>
+</div>
+
+<div class="grid">
+{% for c in crops %}
+<div class="card crop-card">
+<img src="/static/uploads/{{ c[4] }}">
+<h4>{{ c[2] }}</h4>
+<p>₹ {{ c[3] }}</p>
+<a href="/payment/{{ c[0] }}"><button class="primary">Buy</button></a>
+</div>
+{% endfor %}
+</div>
+
+</div>
+
+<footer>© 2026 Farmer Buyer Platform</footer>
+</body>
+</html>
