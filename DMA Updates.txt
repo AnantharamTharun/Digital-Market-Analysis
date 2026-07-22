@@ -1,0 +1,3 @@
+COD
+Pay online - upi integrations(phonepay,gpay,paytm)
+profile icon - dashboard (your orders,address,your whistlist,feedback,wallet,
